@@ -4,7 +4,7 @@ import { MuseumService } from './museum.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { MuseumEntity } from './museum.entity';
 import { Repository, SelectQueryBuilder } from 'typeorm';
-import { MuseumQueryDto } from './dto/museum-query.dto';
+import { MuseumQueryDto } from './museum-query.dto';
 
 type RepoMock = Partial<Record<keyof Repository<MuseumEntity>, jest.Mock>> & {
   createQueryBuilder?: jest.Mock;
