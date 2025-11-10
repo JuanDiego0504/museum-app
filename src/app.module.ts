@@ -20,44 +20,18 @@ import { SponsorEntity } from './sponsor/sponsor.entity';
 import { MuseumArtworkModule } from './museum-artwork/museum-artwork.module';
 
 @Module({
-  imports: [
-    // --- PostgreSQL (tu config actual) ---
+  imports: [MuseumModule, ExhibitionModule, ArtworkModule, SponsorModule, ImageModule, ArtistModule, MovementModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5432,
+      port: 5432, 
       username: 'postgres',
-      password: 'postgres',
+      password: 'slade0504',
       database: 'museum',
-      entities: [
-        ArtistEntity,
-        ArtworkEntity,
-        ExhibitionEntity,
-        ImageEntity,
-        MovementEntity,
-        MuseumEntity,
-        SponsorEntity,
-      ],
+      entities: [ArtistEntity, ArtworkEntity, ExhibitionEntity, ImageEntity, MovementEntity, MuseumEntity, SponsorEntity],
       dropSchema: true,
       synchronize: true,
-      autoLoadEntities: false
     }),
-
-    // --- Alternativa SQLite (si no quieres Postgres local) ---
-    // TypeOrmModule.forRoot({
-    //   type: 'sqlite',
-    //   database: 'museum.db',
-    //   entities: [__dirname + '/**/*.entity{.ts,.js}'],
-    //   synchronize: true,
-    // }),
-
-    MuseumModule,
-    ExhibitionModule,
-    ArtworkModule,
-    SponsorModule,
-    ImageModule,
-    ArtistModule,
-    MovementModule,
     MuseumArtworkModule,
   ],
   controllers: [AppController],
