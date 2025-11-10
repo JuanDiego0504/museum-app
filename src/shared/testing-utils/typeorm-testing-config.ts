@@ -15,7 +15,6 @@ export const TypeOrmTestingConfig = () => [
     dropSchema: true,
     entities: [ArtistEntity, ArtworkEntity, ExhibitionEntity, ImageEntity, MovementEntity, MuseumEntity, SponsorEntity],
     synchronize: true,
-   
   }),
   TypeOrmModule.forFeature([ArtistEntity, ArtworkEntity, ExhibitionEntity, ImageEntity, MovementEntity, MuseumEntity, SponsorEntity]),
 ];
